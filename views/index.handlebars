@@ -1,0 +1,53 @@
+<div class="main-container">
+    <div class="title">
+        <img src='./assets/img/burger.png' alt='burger'>
+
+        <h1>Eat-Da-Burger</h1>
+    </div>
+</div>
+<div class="burgers">
+    <div class="to-be-devoured">
+        <h3>Burgers I want to eat...</h3>
+        <ol>
+            {{#each burger}}
+            {{#unless devoured}}
+            <li>
+                {{burger_name}}
+                <button class='change-devoured' data-id='{{id}}' data-upatedDevoured='{{devoured}}'>
+                    Devoure it!
+                </button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ol>
+    </div>
+
+
+    <div class="devoured">
+        <h3>Burgers I enjoyed...</h3>
+
+        <ol>
+            {{#each burger}}
+            {{#if devoured}}
+            <li>
+                {{burger_name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ol>
+    </div>
+
+</div>
+
+
+<div class="form">
+    <form class="create-form">
+        <h4>Add a burger you would like to devoure!</h4>
+
+        <div class="form-group">
+            <input type="text" id="burg" name="burger_name">
+        </div>
+
+        <button type="submit" id='submit'>Submit</button>
+    </form>
+</div>
