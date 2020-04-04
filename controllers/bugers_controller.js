@@ -2,9 +2,6 @@ const express = require('express');
 const burger = require('../models/burger');
 const router = express.Router();
 
-
-
-
 // Create the router for the app, and export the router at the end of your file.
 router.get('/', function (req, res) {
     burger.selectAll(function (data) {
@@ -42,7 +39,5 @@ router.put('/api/burgers/:id', function (req, res) {
         }
     });
 });
-
-
 
 module.exports = router;

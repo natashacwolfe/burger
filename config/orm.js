@@ -1,13 +1,11 @@
 const connection = require('./connection');
 
-
 function printQuestionMarks(num) {
   var arr = [];
 
   for (var i = 0; i < num; i++) {
     arr.push("?");
   }
-
   return arr.toString();
 }
 
@@ -29,11 +27,9 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
-
   // translate array of strings to a single comma-separated string
   return arr.toString();
 }
-
 
 var orm = {
   selectAll: function (tableInput, cb) {
@@ -62,11 +58,9 @@ var orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
-
 
   updateOne: function (table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
@@ -86,8 +80,5 @@ var orm = {
     });
   }
 };
-
-
-
 
 module.exports = orm;
